@@ -15,22 +15,22 @@ You can click the Preview link to take a look at your changes.
 import sys
 from collections import deque
 
-# Parse the map from a given filename
+# if we want to parse the map from a given filename
 def parse_map(filename):
     with open(filename, "r") as f:
         return [list(line.strip()) for line in f.readlines()][3:]
 
-# Check if a row, col index pair is on the map and valid
+# if we want to row, col index pair is on the map and valid
 def is_valid(pos, n, m, castle_map):
     row, col = pos
     return 0 <= row < n and 0 <= col < m and castle_map[row][col] in ".@"
 
-# Get possible moves from a given position
+# while we need to get possible moves from a given position
 def get_moves(map, row, col):
     directions = [(1, 0), (-1, 0), (0, -1), (0, 1)]  # Down, Up, Left, Right
     return [(row + dr, col + dc) for dr, dc in directions if is_valid((row + dr, col + dc), len(map), len(map[0]), map)]
 
-# Get direction (U, D, L, R) between two positions
+# when we want to get direction (U, D, L, R) between two positions
 def get_direction(from_pos, to_pos):
     row1, col1 = from_pos
     row2, col2 = to_pos
@@ -39,7 +39,6 @@ def get_direction(from_pos, to_pos):
     if col2 == col1 + 1: return "R"
     if col2 == col1 - 1: return "L"
 
-# BFS search for the shortest path in the map
 def search(castle_map):
     start = [(row, col) for row in range(len(castle_map)) for col in range(len(castle_map[0])) if castle_map[row][col] == "p"][0]
     
@@ -59,7 +58,7 @@ def search(castle_map):
 
     return -1, ""  # If no path is found
 
-# Main function to run the program
+# and finally here is Main function to run the program
 if __name__ == "__main__":
     castle_map = parse_map(sys.argv[1])
     print("Shhhh... quiet while I navigate!")
