@@ -64,3 +64,4 @@ if __name__ == "__main__":
     print("Shhhh... quiet while I navigate!")
     move_count, move_path = search(castle_map)
     print(f"Here's the solution I found:\n{move_count} {move_path}")
+qq
