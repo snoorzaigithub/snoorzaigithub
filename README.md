@@ -1,4 +1,4 @@
-#!/usr/local/descktop/python3
+#!/usr/local/descktop/EAI/python3
 # mystical_castle.py 
 # Submitted by : Susan Noorzai/snoorzaigithub
 # CSCI B551, Fall 2024. 
