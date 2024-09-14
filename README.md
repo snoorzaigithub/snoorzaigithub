@@ -50,18 +50,17 @@ def search(castle_map):
         
         for move in get_moves(castle_map, *current_pos):
             if castle_map[move[0]][move[1]] == "@":  # Check if portal is found
-                return distance + 1, path + get_direction(current_pos, move)
+                  return distance + 1, path + get_direction(current_pos, move)
             
             if move not in visited:  # Add unvisited valid moves
-                visited.add(move)
-                queue.append((move, distance + 1, path + get_direction(current_pos, move)))
+                 visited.add(move)
+                  queue.append((move, distance + 1, path + get_direction(current_pos, move)))
 
-    return -1, ""  # If no path is found
+     return -1, ""  # If no path is found
 
 # and finally here is Main function to run the program
-if __name__ == "__main__":
+ if __name__ == "__main__":
     castle_map = parse_map(sys.argv[1])
-    print("Shhhh... quiet while I navigate!")
-    move_count, move_path = search(castle_map)
-    print(f"Here's the solution I found:\n{move_count} {move_path}")
-qq
+     print("Shhhh... quiet while I navigate!")
+     move_count, move_path = search(castle_map)
+    print(f"Here's the solution I found:\n{move_count} {move_path}")  
